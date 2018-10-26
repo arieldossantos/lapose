@@ -3,11 +3,13 @@
 <head>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link type="text/css" rel="stylesheet" href="css/lightgallery.min.css" />
+  <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"/>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>LaPose Photographie</title>
+  <meta name="theme-color" content="#f0f0f0">
+  <title>Le'Pose Photographie</title>
 
   <script src="jquery.min.js"></script>
   <script src="lightgallery.min.js"></script>
@@ -18,41 +20,47 @@
   <!-- titulo -->
   <p class="paragrafo-titulo">
     <span class="titulo">
-      <i class="fas fa-camera-retro"></i> LaPose Photographie
+      <i class="fas fa-camera-retro"></i> Le'Pose Photographie
     </span>
   </p>
 
   <!-- Menu -->
+
+
   <nav role="navigation">
     <div id="menuToggle">
-      <input type="checkbox" />
+      <input id="menucheck" type="checkbox" />
       
       <span></span>
       <span></span>
       <span></span>
 
       <ul id="menu">
-        <a href="#"><li>Home</li></a>
-        <a href="#"><li>Sobre</li></a>
-        <a href="#"><li>Contato</li></a>
+        <a href="index.html"><li><i class="fas fa-home" style="font-size: 14pt;"></i> home</li></a>
+        <a href="sobre.html"><li><i class="fas fa-camera-retro" style="font-size: 14pt;"></i> sobre</li></a>
+        <a href="contato.html"><li><i class="fas fa-at" style="font-size: 14pt;"></i> contato</li></a>
       </ul>
     </div>
   </nav>
 
+  <div id="menuOverlay"></div>
 
   <!-- imagens -->
   <section class="imagens">
-    <div class="item" data-src="https://images.unsplash.com/photo-1536786112857-207c726329a1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5cc03fa6eb0e182af73c28a623b1986e&auto=format&fit=crop&w=750&q=80">
-      <img src="https://images.unsplash.com/photo-1536786112857-207c726329a1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5cc03fa6eb0e182af73c28a623b1986e&auto=format&fit=crop&w=750&q=80" alt>
+    <div class="item" data-src="img/1.jpg">
+      <img src="img/1.jpg" alt>
     </div>
-    <div class="item" data-src="https://images.unsplash.com/photo-1516589091380-5d8e87df6999?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3d8a3317e411d11feee323a66f65ba3d&auto=format&fit=crop&w=750&q=80">
-      <img src="https://images.unsplash.com/photo-1516589091380-5d8e87df6999?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3d8a3317e411d11feee323a66f65ba3d&auto=format&fit=crop&w=750&q=80" alt>
+    <div class="item" data-src="img/2.jpg">
+      <img src="img/2.jpg" alt>
     </div>
-    <div class="item" data-src="https://images.unsplash.com/photo-1497120573086-6219573cf71c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ce6032d8d7955f6d9601c7293dab2f2f&auto=format&fit=crop&w=752&q=80">
-      <img src="https://images.unsplash.com/photo-1497120573086-6219573cf71c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ce6032d8d7955f6d9601c7293dab2f2f&auto=format&fit=crop&w=752&q=80" alt>
+    <div class="item" data-src="img/3.jpg">
+      <img src="img/3.jpg" alt>
     </div>
-    <div class="item" data-src="https://images.unsplash.com/photo-1467643143427-3ceb4e1ea2d5?ixlib=rb-0.3.5&s=4f5f57d24518c62a7f448cc387920dc9&auto=format&fit=crop&w=752&q=80">
-      <img src="https://images.unsplash.com/photo-1467643143427-3ceb4e1ea2d5?ixlib=rb-0.3.5&s=4f5f57d24518c62a7f448cc387920dc9&auto=format&fit=crop&w=752&q=80" alt >
+    <div class="item" data-src="img/4.jpg">
+      <img src="img/4.jpg" alt >
+    </div>
+    <div class="item" data-src="img/5.jpg">
+      <img src="img/5.jpg" alt >
     </div>
   </section>
 
@@ -63,7 +71,8 @@
 
   <script type="text/javascript">
     $('.imagens').lightGallery({
-      selector: ".item"
+      selector: ".item",
+      thumbnail:true
     }); 
 
     $(document).ready(function(){
@@ -74,7 +83,19 @@
           $('.loading-overlay').css('display', 'none');
         }, 300);
       }, 500);
+    });
+
+    $('#menucheck').on('change', function(e){
+      e.target.checked ? $('#menuOverlay').addClass('menuOverlay') : $('#menuOverlay').removeClass('menuOverlay');
     })
   </script>
+
+<footer>
+  <p>
+    <small>&copy; 2018 Le'Pose.<br/>
+      <span style="font-size: 10px;">Developed by <a href="https://arieldossantos.github.io/" style="color: orange;">Ariel 😎</a></span>
+    </small>
+  </p>
+</footer>
 </body>
 </html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="css/lightgallery.min.css" />
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="theme-color" content="#f0f0f0">
+  <title>Le'Pose - Sobre</title>
+
+  <script src="jquery.min.js"></script>
+  <script src="lightgallery.min.js"></script>
+  <script src="lg-thumbnail.js"></script>
+  <script src="lg-fullscreen.js"></script>
+</head>
+<body>
+  <!-- titulo -->
+  <p class="paragrafo-titulo">
+    <span class="titulo">
+      <i class="fas fa-camera-retro"></i> Le'Pose Photographie
+    </span>
+  </p>
+
+  <!-- Menu -->
+
+
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input id="menucheck" type="checkbox" />
+      
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <ul id="menu">
+        <a href="index.html"><li><i class="fas fa-home" style="font-size: 14pt;"></i> home</li></a>
+        <a href="sobre.html"><li><i class="fas fa-camera-retro" style="font-size: 14pt;"></i> sobre</li></a>
+        <a href="contato.html"><li><i class="fas fa-at" style="font-size: 14pt;"></i> contato</li></a>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="menuOverlay"></div>
+
+  <!-- imagens -->
+  <section class="sobre">
+    <h1>Sobre nós</h1>
+    <p class="sobre-nos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lectus nibh, malesuada sed feugiat nec, hendrerit eget libero. Donec non magna at nulla semper sagittis. Duis luctus consequat dapibus. Etiam at ultrices lacus. Etiam auctor dui in lacus malesuada finibus. Sed congue, magna vitae suscipit maximus, diam lacus tristique tortor, vel mollis tortor libero et tortor. Mauris ullamcorper vehicula sapien eu tincidunt. Nulla aliquet mattis neque non iaculis. Maecenas accumsan porta ante eu ullamcorper. Vestibulum rhoncus sapien sit amet iaculis consequat. Nunc sit amet justo non lorem faucibus feugiat a tristique massa. Vivamus dignissim, erat eget rhoncus lobortis, massa ligula dictum dui, quis interdum urna dolor quis nunc. Sed mauris justo, consequat id bibendum eu, rhoncus eget sem. Duis aliquet ipsum ac vestibulum vestibulum. Ut tincidunt erat nec metus pretium condimentum.</p>
+  </section>
+
+  <div class="loading-overlay"></div>
+  <div class="loading-heart">
+    <div class="lds-heart"><div></div></div>
+  </div>
+
+  <script type="text/javascript">
+    $('.imagens').lightGallery({
+      selector: ".item"
+    }); 
+
+    $(document).ready(function(){
+      setTimeout(function(){
+        $('.loading-overlay').css('opacity', 0);
+        $('.loading-heart').hide(400);
+        setTimeout(function(){
+          $('.loading-overlay').css('display', 'none');
+        }, 300);
+      }, 500);
+    });
+
+    $('#menucheck').on('change', function(e){
+      e.target.checked ? $('#menuOverlay').addClass('menuOverlay') : $('#menuOverlay').removeClass('menuOverlay');
+    })
+  </script>
+
+<footer>
+  <p>
+    <small>&copy; 2018 Le'Pose.<br/>
+      <span style="font-size: 10px;">Developed by <a href="https://arieldossantos.github.io/" style="color: orange;">Ariel 😎</a></span>
+    </small>
+  </p>
+</footer>
+</body>
+</html>
